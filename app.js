@@ -113,7 +113,7 @@ const SemanticEngine = {
         {
             id: 'scenario_base',
             generate: (c) => ({
-                q: `In the context of ${c.category}, a phenomenon described as "${c.definition}" refers to which concept?`,
+                q: `"${c.definition}" refers to?`,
                 a: c.term,
                 type: 'Hard'
             })
