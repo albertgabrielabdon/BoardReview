@@ -503,7 +503,7 @@ window.UI = {
     },
 
     deleteTerm(index) {
-        if (!Utils.confirm('Delete this concept?')) return;
+        //if (!Utils.confirm('Delete this concept?')) return; tempo remove til phone issue resolve
         DB.questions.splice(index, 1);
         Utils.saveDB();
         this.updateSidebarStats();
