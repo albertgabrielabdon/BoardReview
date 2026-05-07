@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leanne's Board Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.basic.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-gate" class="login-overlay">
+        <div class="login-card">
+            <div class="login-brand">
+                <div class="login-logo-circle">
+                    <img src="leanne.JPG" alt="Leanne">
+                </div>
+                <h1>Leanne's Board Reviewer</h1>
+                <p>Please enter passwordy</p>
+            </div>
+            <div class="login-form">
+                <input type="password" id="pass-input" placeholder="Enter Password" autocomplete="off">
+                <button onclick="checkPass()" id="login-btn">ACCESS</button>
+                <div id="login-error" class="error-msg">Access Denied. Try again.</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-app" style="display: none;">
+        <div class="app-shell">
+
+            <!-- Mobile Header -->
+            <header class="mobile-header">
+                <div class="mobile-logo">Leanne's<br><span>Board Review</span></div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </header>
+    
+            <!-- Sidebar -->
+            <nav class="sidebar" id="sidebar">
+                <div class="sidebar-brand">
+                    <div class="brand-mark">
+                        <img src="leanne.JPG" alt="Leanne" id="brand-img">
+                    </div>
+                    <div class="brand-text">
+                        <div class="brand-name">Leanne's</div>
+                        <div class="brand-sub">Board Review</div>
+                    </div>
+                </div>
+    
+                <ul class="nav-list" id="nav-list">
+                    <li class="nav-item active" data-page="home">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+                        <span>Home</span>
+                    </li>
+                    <li class="nav-item" data-page="flashcards">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        <span>Library</span>
+                    </li>
+                    <li class="nav-item" data-page="quiz">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                        <span>Quiz</span>
+                    </li>
+                    <li class="nav-item" data-page="stats">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        <span>Stats</span>
+                    </li>
+                </ul>
+    
+                <div class="sidebar-stats">
+                    <div class="stat-chip" id="stat-correct">
+                        <span class="stat-chip-val">0</span>
+                        <span class="stat-chip-lbl">Correct</span>
+                    </div>
+                    <div class="stat-chip" id="stat-items">
+                        <span class="stat-chip-val">0</span>
+                        <span class="stat-chip-lbl">Items</span>
+                    </div>
+                </div>
+            </nav>
+    
+            <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
+            <!-- Main Content -->
+            <main class="main-content">
+                <div id="dynamic-content" class="page-content"></div>
+            </main>
+    
+        </div>
+        
+    </div>
+
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <script src="app.js" type="module"></script>
+    <script src="stat.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
