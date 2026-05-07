@@ -750,7 +750,7 @@ window.UI = {
         const message = percent === 100 ? 'Perfect score! Absolutely brilliant.'
             : percent >= 80 ? 'Outstanding work — keep that momentum going.'
             : percent >= 60 ? 'Good effort. Review the missed items to strengthen retention.'
-            : 'Keep practicing — consistency is everything.';
+            : 'Perfection trained me how to evade rocks, but it never taught me how to dodge bullets. - Stella Hermosa';
 
         const circ = 2 * Math.PI * 46;
         const offset = circ - (percent / 100) * circ;
