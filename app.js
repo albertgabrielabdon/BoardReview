@@ -717,12 +717,14 @@ window.UI = {
     },
 
     forceEndQuiz(confirmFirst) {
-        if (confirmFirst && !window.confirm('End quiz? Remaining questions will be marked as 0.')) {
-            return;
-        }
+        //leave confirmFirst unused for now until I find a way to implement it in phone better
         document.removeEventListener('keydown', this._quizKeyHandler);
-        const remaining = quizState.currentQuestions.length - (quizState.currentIndex + (quizState.isAnswered ? 1 : 0));
-        quizState.sessionWrong += Math.max(0, remaining);
+    
+        const totalQuestions = quizState.currentQuestions.length;
+        const currentPos = quizState.currentIndex + (quizState.isAnswered ? 1 : 0);
+        const remaining = Math.max(0, totalQuestions - currentPos);
+        
+        quizState.sessionWrong += remaining;
         quizState.isActive = false;
     
         this.renderResults();
