@@ -717,11 +717,14 @@ window.UI = {
     },
 
     forceEndQuiz(confirmFirst) {
-        if (confirmFirst && !Utils.confirm('End quiz? Remaining questions will be marked as 0.')) return;
+        if (confirmFirst && !window.confirm('End quiz? Remaining questions will be marked as 0.')) {
+            return;
+        }
         document.removeEventListener('keydown', this._quizKeyHandler);
         const remaining = quizState.currentQuestions.length - (quizState.currentIndex + (quizState.isAnswered ? 1 : 0));
-        quizState.sessionWrong += remaining;
+        quizState.sessionWrong += Math.max(0, remaining);
         quizState.isActive = false;
+    
         this.renderResults();
     },
 
