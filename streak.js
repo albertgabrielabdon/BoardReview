@@ -55,7 +55,7 @@ const StreakLogic = {
 };
 
 window.CloudSync = {
-    API_URL: "https://script.google.com/macros/s/AKfycbzohNYfKPJbIhgvwAJzANRk2ewdBsVWS-EYbWJGDXd8E2I3HP1f6wC0v5k4UiWg3wlk/exec",
+    API_URL: "https://script.google.com/macros/s/AKfycbz2yOS95b9c6HpJVUSz3S1Hk5aOo_QHqOERMhALO62G7Q9_lgQJLmK27234cOjd47pD/exec",
 
     async pull(username) {
         try {
@@ -120,6 +120,7 @@ window.CloudSync = {
         Utils.saveDB();
     
         const payload = {
+            action: "push_stats",
             username: DB.stats.sync.username,
             streak: JSON.stringify(DB.stats.streak),
             xp: DB.stats.xp || 0,
