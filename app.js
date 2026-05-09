@@ -275,7 +275,7 @@ window.UI = {
             window.chatInterval = null;
         }
 
-        if (page === 'home') this.renderHome(); 
+        if (page === 'home') UI.renderHome();
         if (page === 'quiz') this.renderQuizSetup();
         if (page === 'flashcards') this.renderLibraryEditor();
         if (page === 'stats' && window.StatsManager) window.StatsManager.renderDashboard();
