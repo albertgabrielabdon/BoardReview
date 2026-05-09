@@ -36,3 +36,8 @@ Watch how well you do in the **Stats Tab**:
 
 ## Access & Privacy
 * I already told you the password. For the nerds outs here, yes I apologize for having it preset in the site and I am aware that is definitely not good practice. No, do not try to uncover anyway. #StayAway
+
+---
+
+## Update V1
+* Added Streak feature using Google Sheet as backend. Different users can now exist. (Everyone can hack each other too for now)
