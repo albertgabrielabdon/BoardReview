@@ -83,7 +83,7 @@ let defaultData = {
             streakFreezes: 1
         },
         sync: {
-            username: "", // Leave blank so login can set it
+            username: "",
             version: 0               
         }
     },
@@ -270,10 +270,26 @@ window.UI = {
     route(page) {
         const container = document.getElementById('dynamic-content');
         container.innerHTML = ""; 
+
+        if (window.chatInterval) {
+            clearInterval(window.chatInterval);
+            window.chatInterval = null;
+        }
+
         if (page === 'home') this.renderHome(); 
         if (page === 'quiz') this.renderQuizSetup();
         if (page === 'flashcards') this.renderLibraryEditor();
         if (page === 'stats' && window.StatsManager) window.StatsManager.renderDashboard();
+        if (page === 'chat') {
+            if (window.ChatSystem) {
+                container.innerHTML = ChatSystem.renderPage();
+                ChatSystem.fetchMessages();
+                window.chatInterval = setInterval(() => ChatSystem.fetchMessages(), 5000);
+            } else {
+                console.error("ChatSystem object missing from window");
+                container.innerHTML = "<p>Chat module not loaded.</p>";
+            }
+        }
     },
 
     setActiveNav(page) {
