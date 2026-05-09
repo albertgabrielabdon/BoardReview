@@ -1,4 +1,3 @@
-
 const Icons = {
     _svg: (path, opts = {}) => {
         const { size = 16, vb = '0 0 24 24', strokeWidth = 2, cls = '' } = opts;
