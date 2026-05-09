@@ -39,5 +39,6 @@ Watch how well you do in the **Stats Tab**:
 
 ---
 
-## Update V1
-* Added Streak feature using Google Sheet as backend. Different users can now exist. (Everyone can hack each other too for now)
+## Update History
+* Version 1.1: Added Streak feature using Google Sheet as backend. Different users can now exist. (Everyone can hack each other too for now)
+* Version 1.2: Added Chat feature. All users can interact with each other. 
