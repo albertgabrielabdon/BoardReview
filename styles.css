@@ -1557,3 +1557,59 @@ tr.editing .btn-icon[title="Edit"] {
     margin-top: 15px;
     font-weight: 500;
 }
+
+streak-active {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    border: 2px solid var(--rose-400);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.stat-chip-icon svg {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+.streak-active .stat-chip-icon svg {
+    color: #ff4500;
+    fill: rgba(255, 69, 0, 0.2);
+    filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.4));
+}
+
+@keyframes pulse-streak {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.streak-bump {
+    animation: pulse-streak 0.5s ease-out;
+}
+
+.header-streak-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 69, 0, 0.1);
+    color: #ff4500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.header-streak-badge svg {
+    color: #ff4500;
+    fill: rgba(255, 69, 0, 0.2);
+    transform: scale(1.2);
+}
+
+.header-streak-badge.hidden {
+    display: none;
+}
