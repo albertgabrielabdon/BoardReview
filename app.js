@@ -275,7 +275,20 @@ window.UI = {
             window.chatInterval = null;
         }
 
-        if (page === 'home') UI.renderHome();
+         if (page === 'home') {
+            if (!DB.stats || !DB.stats.sync || !DB.stats.sync.username) {
+                container.innerHTML = `
+                    <div class="loading-state">
+                        <div class="spinner"></div>
+                        <p>Syncing your progress...</p>
+                    </div>`;
+                
+                setTimeout(() => UI.route('home'), 500);
+                return;
+            }
+            
+            UI.renderHome();
+        }
         if (page === 'quiz') this.renderQuizSetup();
         if (page === 'flashcards') this.renderLibraryEditor();
         if (page === 'stats' && window.StatsManager) window.StatsManager.renderDashboard();
