@@ -22,6 +22,7 @@
                 <p>Please enter passwordy</p>
             </div>
             <div class="login-form">
+                <input type="text" id="user-input" placeholder="Enter Username" autocomplete="off" style="margin-bottom: 10px;">
                 <input type="password" id="pass-input" placeholder="Enter Password" autocomplete="off">
                 <button onclick="checkPass()" id="login-btn">ACCESS</button>
                 <div id="login-error" class="error-msg">Access Denied. Try again.</div>
@@ -32,7 +33,6 @@
     <div id="main-app" style="display: none;">
         <div class="app-shell">
 
-            <!-- Mobile Header -->
             <header class="mobile-header">
                 <div class="mobile-logo">Leanne's<br><span>Board Review</span></div>
                 <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -40,7 +40,6 @@
                 </button>
             </header>
     
-            <!-- Sidebar -->
             <nav class="sidebar" id="sidebar">
                 <div class="sidebar-brand">
                     <div class="brand-mark">
@@ -76,16 +75,21 @@
                         <span class="stat-chip-val">0</span>
                         <span class="stat-chip-lbl">Correct</span>
                     </div>
-                    <div class="stat-chip" id="stat-items">
+                    <div class="stat-chip streak-active" id="stat-streak">
+                        
+                        <span class="stat-chip-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-flame">
+                                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                            </svg>
+                        </span>
                         <span class="stat-chip-val">0</span>
-                        <span class="stat-chip-lbl">Items</span>
+                       
                     </div>
                 </div>
             </nav>
     
             <div class="sidebar-overlay" id="sidebar-overlay"></div>
     
-            <!-- Main Content -->
             <main class="main-content">
                 <div id="dynamic-content" class="page-content"></div>
             </main>
@@ -94,11 +98,10 @@
         
     </div>
 
-
-    <!-- Toast Container -->
     <div id="toast-container"></div>
 
-    <script src="app.js" type="module"></script>
+    <script src="app.js"></script>
+    <script src="streak.js"></script>
     <script src="stat.js"></script>
     <script src="login.js"></script>
 </body>
