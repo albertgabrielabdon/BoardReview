@@ -5,7 +5,7 @@ window.checkPass = async function() {
     const app = document.getElementById('main-app');
     const error = document.getElementById('login-error');
 
-    if (pass === "l" && user !== "") {
+    if (pass === "LeanneIsCool" && user !== "") {
         DB.stats.xp = 0;
         DB.stats.streak = { 
             current: 0, 
